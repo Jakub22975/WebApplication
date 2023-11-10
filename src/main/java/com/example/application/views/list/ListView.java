@@ -3,9 +3,7 @@ package com.example.application.views.list;
 import com.example.application.data.Contact;
 import com.example.application.services.CrmService;
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.crud.CrudI18n;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -13,15 +11,12 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.shared.Registration;
-
-import java.awt.*;
-import java.util.Collections;
-
+import jakarta.annotation.security.PermitAll;
 
 
 @PageTitle("Contacts")
-@Route(value = "")
+@Route(value = "",layout = MainLayout.class)
+@PermitAll
 public class ListView extends VerticalLayout {
     private final CrmService service;
     Grid<Contact> grid = new Grid<>(Contact.class);
